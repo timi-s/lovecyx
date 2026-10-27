@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0713">
+  <meta name="description" content="写给陈雨欣的一封很长很长的情书。">
+  <title>致陈雨欣 · 一封很长的情书</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#letter">跳到情书</a>
+
+  <!-- 背景层 -->
+  <canvas id="sky" class="sky" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="aurora aurora--one" aria-hidden="true"></div>
+  <div class="aurora aurora--two" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- 顶部：阅读进度 + 导航 -->
+  <div class="progress" aria-hidden="true"><span class="progress__bar" id="progressBar"></span></div>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#top" aria-label="回到顶部">
+      <span class="brand__heart" aria-hidden="true">♥</span>
+      <span class="brand__names" id="brandNames">陈雨欣 &amp; 胡毅</span>
+    </a>
+    <nav class="topnav" aria-label="页面导航">
+      <a href="#letter">情书</a>
+      <a href="#photo">相框</a>
+      <a href="#timeline">时间线</a>
+      <a href="#reasons">喜欢你</a>
+      <a href="#bucket">余生</a>
+    </nav>
+    <button class="sound" id="soundBtn" type="button" aria-pressed="false" aria-label="播放背景音乐">
+      <span class="sound__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18V6l10-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/>
+        </svg>
+      </span>
+      <span class="sound__label" id="soundLabel">音乐</span>
+      <span class="sound__wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- ================= 首屏 ================= -->
+    <section class="hero" id="hero" aria-labelledby="heroTitle">
+      <div class="hero__inner">
+        <p class="hero__eyebrow" id="heroEyebrow">TO YOU · 致屏幕那头的你</p>
+        <h1 class="hero__title" id="heroTitle">
+          <span class="hero__line" id="heroTitleTop">遇见你，</span>
+          <span class="hero__line hero__line--em" id="heroTitleBottom">是我所有浪漫的开始</span>
+        </h1>
+        <p class="hero__sub" id="heroSub">把隔着屏幕的喜欢，写成一封很长很长的情书。</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#letter">
+            <span id="primaryBtnLabel">打开这封信</span>
+            <span class="btn__arrow" aria-hidden="true">↓</span>
+          </a>
+          <button class="btn btn--ghost" id="heartBurstBtn" type="button">
+            <span class="btn__heart" aria-hidden="true">♥</span>
+            <span id="ghostBtnLabel">点亮心动</span>
+          </button>
+        </div>
+
+        <div class="counter" id="counter" role="group" aria-label="我们相识的时间">
+          <p class="counter__label">我们相识已经</p>
+          <div class="counter__time">
+            <div class="counter__cell"><strong id="days">015</strong><span>天</span></div>
+            <div class="counter__cell"><strong id="hours">00</strong><span>时</span></div>
+            <div class="counter__cell"><strong id="minutes">00</strong><span>分</span></div>
+            <div class="counter__cell"><strong id="seconds">00</strong><span>秒</span></div>
+          </div>
+          <p class="counter__since" id="sinceLabel">SINCE 2026.10.10</p>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#letter" aria-label="向下阅读">
+        <span class="scroll-hint__line" aria-hidden="true"></span>
+        <span>向下读</span>
+      </a>
+    </section>
+
+    <!-- ================= 01 情书 ================= -->
+    <section class="section letter-section" id="letter" aria-labelledby="letterTitle">
+      <header class="section-head reveal">
+        <p class="section-head__num">01 <span aria-hidden="true"></span></p>
+        <h2 id="letterTitle">一封写给你的信</h2>
+        <p class="section-head__desc">有些话，隔着屏幕说不清，就一个字一个字地写下来。</p>
+      </header>
+
+      <article class="letter reveal" id="letterCard">
+        <div class="letter__top">
+          <p class="letter__to" id="letterTo">给陈雨欣：</p>
+          <div class="letter__stamp" aria-hidden="true"><span>LOVE</span><span>LETTER</span></div>
+        </div>
+        <div class="letter__body" id="letterBody"></div>
+        <div class="letter__sign">
+          <p class="letter__sign-line" id="letterSignature">想穿过屏幕去见你的人</p>
+          <p class="letter__sign-name" id="letterFrom">胡毅</p>
+          <p class="letter__date" id="letterDate">2026 年 10 月 27 日</p>
+        </div>
+        <div class="letter__seal" aria-hidden="true"><span>♥</span></div>
+      </article>
+
+      <p class="letter-tip reveal" id="letterTip">— 把目光停在文字上，可以读得慢一点 —</p>
+    </section>
+
+    <!-- ================= 02 相框里的你 ================= -->
+    <section class="section photo-section" id="photo" aria-labelledby="photoTitle">
+      <div class="photo-grid">
+        <figure class="photo-figure reveal">
+          <div class="photo-frame">
+            <div class="photo-window" id="photoWindow">
+              <img id="photoImg" src="assets/photo-placeholder.svg" alt="陈雨欣" width="900" height="1200" loading="lazy" decoding="async">
+              <video id="photoVideo" class="photo-window__video" playsinline muted loop preload="metadata" aria-label="陈雨欣的视频" hidden></video>
+              <span class="photo-window__glare" aria-hidden="true"></span>
+
+              <span class="photo-video-badge" id="photoVideoBadge" aria-hidden="true"><i></i>VIDEO</span>
+
+              <div class="photo-video-ui" id="photoVideoUI" hidden>
+                <button class="photo-video-btn" id="photoVideoPlay" type="button" aria-label="播放视频">
+                  <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5 19 12 8 18.5Z" fill="currentColor"/></svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+                </button>
+                <button class="photo-video-btn" id="photoVideoSound" type="button" aria-label="打开视频声音" aria-pressed="false">
+                  <svg class="icon-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+                  <svg class="icon-sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z"/><path d="m16 9 5 5M21 9l-5 5"/></svg>
+                </button>
+              </div>
+
+              <button class="photo-video-bigplay" id="photoVideoBigPlay" type="button" aria-label="播放视频" hidden>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5 19 12 8 18.5Z" fill="currentColor"/></svg>
+              </button>
+            </div>
+            <div class="photo-plaque">
+              <span class="photo-plaque__name" id="photoPlaqueName">陈雨欣</span>
+              <span class="photo-plaque__heart" aria-hidden="true">♥</span>
+              <span class="photo-plaque__meta" id="photoPlaqueMeta">MY GIRL · 2026</span>
+            </div>
+          </div>
+          <figcaption class="photo-caption" id="photoCaption">照片和视频里的你，我看了很多遍，<br>像你已经坐在我对面。</figcaption>
+        </figure>
+
+        <div class="photo-copy">
+          <header class="section-head reveal">
+            <p class="section-head__num">02 <span aria-hidden="true"></span></p>
+            <h2 id="photoTitle">相框里的你</h2>
+            <p class="section-head__desc" id="photoDesc">我们还没在现实里见面，但你发来的照片和视频，我都看了很多遍。喜欢隔着屏幕传过来，也会在心里落得很重。</p>
+          </header>
+          <dl class="photo-facts reveal" id="photoFacts"></dl>
+          <p class="photo-note reveal" id="photoNote">— 私藏，不对外展出 —</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 03 时间线 ================= -->
+    <section class="section timeline-section" id="timeline" aria-labelledby="timelineTitle">
+      <header class="section-head reveal">
+        <p class="section-head__num">03 <span aria-hidden="true"></span></p>
+        <h2 id="timelineTitle">我们的时间线</h2>
+        <p class="section-head__desc">隔着一块屏幕，我们也在把普通的日子，过成值得标记的纪念。</p>
+      </header>
+      <ol class="timeline" id="timelineList"></ol>
+    </section>
+
+    <!-- ================= 04 喜欢你的理由 ================= -->
+    <section class="section reasons-section" id="reasons" aria-labelledby="reasonsTitle">
+      <header class="section-head reveal">
+        <p class="section-head__num">04 <span aria-hidden="true"></span></p>
+        <h2 id="reasonsTitle">喜欢你的理由</h2>
+        <p class="section-head__desc">认真数一数，大概有三百六十五个，这里只写了六个。</p>
+      </header>
+      <div class="reasons" id="reasonsGrid"></div>
+    </section>
+
+    <!-- ================= 05 心动实验室 ================= -->
+    <section class="section lab-section" id="lab" aria-labelledby="labTitle">
+      <header class="section-head section-head--center reveal">
+        <p class="section-head__num">05 <span aria-hidden="true"></span></p>
+        <h2 id="labTitle">心动实验室</h2>
+        <p class="section-head__desc">一个不太严谨，但很诚实的小实验。</p>
+      </header>
+
+      <div class="lab reveal" id="labCard">
+        <p class="lab__kicker" id="labKicker">A LITTLE EXPERIMENT</p>
+        <h3 class="lab__title" id="labMeterTitle">把心动值填满</h3>
+        <p class="lab__text" id="labText">听说喜欢一个人时，心跳会留下痕迹，隔着屏幕也一样。轻点下面每一颗心，看看结果。</p>
+
+        <div class="hearts" id="heartMeter" role="group" aria-label="点亮五颗心收集心动值">
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="第 1 颗心">♥</button>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="第 2 颗心">♥</button>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="第 3 颗心">♥</button>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="第 4 颗心">♥</button>
+          <button class="heart-btn" type="button" aria-pressed="false" aria-label="第 5 颗心">♥</button>
+        </div>
+
+        <div class="meter" aria-hidden="true">
+          <div class="meter__track"><span class="meter__fill" id="meterFill"></span></div>
+          <p class="meter__value"><span id="meterValue">0</span><small>%</small></p>
+        </div>
+        <p class="lab__result" id="meterResult" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ================= 06 余生清单 ================= -->
+    <section class="section bucket-section" id="bucket" aria-labelledby="bucketTitle">
+      <header class="section-head reveal">
+        <p class="section-head__num">06 <span aria-hidden="true"></span></p>
+        <h2 id="bucketTitle">余生清单</h2>
+        <p class="section-head__desc">写下来，是为了有一天，把它们从屏幕里的约定变成现实。</p>
+      </header>
+      <ul class="bucket" id="bucketList"></ul>
+      <p class="bucket__note reveal" id="bucketNote">勾选的事，要一起完成。<span class="bucket__progress" id="bucketProgress" aria-live="polite">已完成 0 / 6</span></p>
+    </section>
+
+    <!-- ================= 最后一个问题 ================= -->
+    <section class="section proposal-section" id="proposal" aria-labelledby="proposalTitle">
+      <div class="proposal reveal" id="proposalInner">
+        <p class="proposal__kicker" id="proposalKicker">THE LAST QUESTION</p>
+        <h2 class="proposal__title" id="proposalTitle">
+          <span id="proposalTitleTop">最后一个问题：</span>
+          <em id="proposalTitleEm">你愿意和我一起，把网恋变成余生吗？</em>
+        </h2>
+
+        <div class="proposal__stage" id="proposalStage">
+          <button class="btn btn--primary btn--yes" id="yesBtn" type="button">愿意 ♥</button>
+          <button class="btn btn--no" id="noBtn" type="button">再想想</button>
+        </div>
+        <p class="proposal__hint" id="proposalHint">提示：这个「再想想」不太听话，它总想逃。</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__heart" aria-hidden="true">♥</p>
+      <p class="footer__line" id="footerLine">写给陈雨欣 · 第 ∞ 页 · 未完待续</p>
+      <p class="footer__meta">
+        <span id="footerMade">Made with <span aria-hidden="true">♥</span> by 胡毅</span>
+        <span class="footer__dot" aria-hidden="true">·</span>
+        <span id="footerYear">2026</span>
+      </p>
+    </footer>
+  </main>
+
+  <!-- 答应的那一刻 -->
+  <div class="celebrate" id="celebrate" role="dialog" aria-modal="true" aria-labelledby="celebrateTitle" aria-describedby="celebrateText" hidden>
+    <div class="celebrate__confetti" id="celebrateConfetti" aria-hidden="true"></div>
+    <div class="celebrate__card">
+      <p class="celebrate__kicker" id="celebrateKicker">YES!</p>
+      <h2 class="celebrate__title" id="celebrateTitle">我就知道 ♥</h2>
+      <p class="celebrate__text" id="celebrateText">那说好了，从今往后的每一个明天，都要一起拆开。</p>
+      <div class="celebrate__seal" aria-hidden="true"><span id="celebrateSeal">最好的我们</span></div>
+      <button class="btn btn--primary celebrate__close" id="celebrateClose" type="button">收下这封情书</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">这封情书需要 JavaScript 才能展开。请在浏览器中启用 JavaScript 后再读它。</div>
+  </noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

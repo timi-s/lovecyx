@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" role="img" aria-label="陈雨欣的相框占位插画">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#2b1021"/>
+      <stop offset="0.52" stop-color="#1a0a16"/>
+      <stop offset="1" stop-color="#0d0611"/>
+    </linearGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="42%" r="56%">
+      <stop offset="0" stop-color="#ff8fb1" stop-opacity="0.42"/>
+      <stop offset="0.55" stop-color="#ff6b96" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ff6b96" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="heartFill" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#ffe2c2"/>
+      <stop offset="0.42" stop-color="#ff9fbe"/>
+      <stop offset="0.78" stop-color="#e45c88"/>
+      <stop offset="1" stop-color="#a9335b"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="44%" r="72%">
+      <stop offset="0.55" stop-color="#0b0713" stop-opacity="0"/>
+      <stop offset="1" stop-color="#08040c" stop-opacity="0.78"/>
+    </radialGradient>
+    <filter id="blurHeart" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="noise" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <circle cx="450" cy="450" r="330" fill="url(#moonGlow)"/>
+
+  <g fill="#ffe8cf" opacity="0.6">
+    <circle cx="178" cy="300" r="2.2"/>
+    <circle cx="724" cy="268" r="2.8"/>
+    <circle cx="782" cy="540" r="1.7"/>
+    <circle cx="146" cy="632" r="1.8"/>
+    <circle cx="676" cy="748" r="1.5"/>
+    <circle cx="252" cy="786" r="1.3"/>
+    <circle cx="646" cy="192" r="1.2"/>
+    <circle cx="304" cy="168" r="1.6"/>
+    <circle cx="112" cy="462" r="1.9"/>
+    <circle cx="800" cy="900" r="1.3"/>
+    <circle cx="196" cy="918" r="1.1"/>
+    <circle cx="716" cy="1000" r="1.6"/>
+  </g>
+
+  <g fill="none" stroke="#f6d6a8">
+    <circle cx="450" cy="468" r="252" stroke-opacity="0.17" stroke-width="1.2"/>
+    <circle cx="450" cy="468" r="274" stroke-opacity="0.09" stroke-width="1" stroke-dasharray="2 9"/>
+  </g>
+
+  <path d="M450 668C360 592 325 527 325 472C325 420 365 387 408 387C432 387 446 399 450 418C454 399 468 387 492 387C535 387 575 420 575 472C575 527 540 592 450 668Z"
+        fill="#ff5c8a" opacity="0.5" filter="url(#blurHeart)"/>
+  <path d="M450 668C360 592 325 527 325 472C325 420 365 387 408 387C432 387 446 399 450 418C454 399 468 387 492 387C535 387 575 420 575 472C575 527 540 592 450 668Z"
+        fill="url(#heartFill)"/>
+  <path d="M450 650C371 583 341 528 341 481C341 438 374 410 409 410C429 410 444 421 450 438C456 421 471 410 491 410C526 410 559 438 559 481C559 528 529 583 450 650Z"
+        fill="none" stroke="#ffe9d3" stroke-opacity="0.32" stroke-width="1.2"/>
+  <ellipse cx="396" cy="454" rx="25" ry="12" fill="#fff6ea" opacity="0.2" transform="rotate(-32 396 454)"/>
+
+  <g text-anchor="middle" font-family="Georgia, 'Times New Roman', 'Songti SC', serif">
+    <text x="450" y="246" font-size="20" letter-spacing="9" fill="#f6d6a8" opacity="0.62">A PORTRAIT OF</text>
+    <text x="450" y="892" font-size="47" letter-spacing="16" fill="#f6d6a8">YUXIN</text>
+    <text x="450" y="948" font-family="KaiTi, STKaiti, 'Songti SC', serif" font-size="35" letter-spacing="8" fill="#ffd9e4" opacity="0.92">陈雨欣</text>
+    <text x="450" y="1078" font-size="17" letter-spacing="7" fill="#f6d6a8" opacity="0.62">2026 · AUTUMN</text>
+  </g>
+
+  <g fill="none" stroke="#f6d6a8" stroke-opacity="0.28" stroke-width="1">
+    <path d="M360 1010H432"/>
+    <path d="M468 1010H540"/>
+  </g>
+  <path d="M450 1005L456 1010L450 1015L444 1010Z" fill="#f6d6a8" opacity="0.5"/>
+
+  <rect width="900" height="1200" fill="url(#vignette)"/>
+  <rect width="900" height="1200" filter="url(#noise)" opacity="0.5"/>
+</svg>
